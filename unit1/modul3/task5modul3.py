@@ -1,11 +1,18 @@
 import math
 
 e = float(input('enter e'))
-n = 1
-a = 1 / 2 ** n + 1 / 3 ** n
-sum = 0
-while math.fabs(a) > e:
+
+
+def calculate(e):
+    sum = 0
+    n = 1
     a = 1 / 2 ** n + 1 / 3 ** n
-    sum += a
-    n += 1
-print('sum:', sum)
+
+    while math.fabs(a) > e:
+        a = 1 / 2 ** n + 1 / 3 ** n
+        sum += a
+        n += 1
+    return sum
+
+
+print('sum:', calculate(e))
